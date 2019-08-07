@@ -47,11 +47,11 @@
 
         <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
           
-          <ul>
-            <li>Support</li>
-            <li>Australia</li>
-            <li>Login</li>
-          </ul>
+        <ul class="announcement-bar__nav announcement-bar__message">
+          <li>Support</li>
+          <li>Australia</li>
+          <li>Login</li>
+        </ul>
 
       {% if section.settings.message_link == blank %}
         </div>

@@ -4364,7 +4364,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 }
 
 .announcement-bar {
-  text-align: center;
   position: relative;
   z-index: $z-index-announcement-bar;
 }
@@ -4375,13 +4374,48 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .announcement-bar__message {
   display: block;
-  font-size: em(16);
+  font-size: em(9);
   font-weight: $font-weight-header;
+  text-transform: uppercase;
   padding: 10px $gutter-site-mobile;
 
   @include media-query($medium-up) {
     padding: 10px $gutter-site;
   }
+
+  @include media-query($narrowscreen) {
+    text-align: center;
+  }
+
+  @include media-query($large-up) {
+    text-align: center;
+  }
+}
+
+.announcement-bar__message p {
+  @include media-query($narrowscreen) {
+    margin: 0;
+  }
+}
+
+.announcement-bar__nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @include media-query($narrowscreen) {
+    position: static;
+    text-align: center;
+  }
+}
+
+.announcement-bar__nav li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.announcement-bar__nav li:last-child {
+  margin-right: 0;
 }
 
 .site-header__logo {
