@@ -50,10 +50,15 @@
           
         <ul class="announcement-bar__nav announcement-bar__message">
           <li>Support</li>
-          <li>
+          <li class="dropdown">
             <img class="flag-aus" src="{{ 'australia_28x.png' |  asset_img_url: '20x12' }}" alt="">
             Australia
             <span class="caret-down">▾</span>
+            <ul class="dropdown__content">
+              <li>Australia</li>
+              <li>United States</li>
+              <li>Belgium</li>
+            </ul>
           </li>
           <li>Login</li>
         </ul>
