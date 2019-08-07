@@ -1285,6 +1285,7 @@ html {
 }
 
 .section-header {
+  position: relative;
   margin-bottom: $section-spacing-small;
 
   @include media-query($medium-up) {
@@ -1294,6 +1295,17 @@ html {
   a {
     border-bottom: 1px solid currentColor;
   }
+}
+
+.section-header h1 {
+  position: absolute;
+  top: calc(50% - 14px);
+  left: 66px;
+  text-transform: uppercase;
+  font-size: em(28);
+  font-weight: 900;
+  letter-spacing: 0.05rem;
+  color: #fff;
 }
 
 /*================ Typography ================*/
