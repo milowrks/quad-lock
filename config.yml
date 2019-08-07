@@ -1,0 +1,3 @@
+development:
+  password: ${DEV_PASSWD_DOTDEV_TEST}
+  store: ${DEV_SHOP_DOTDEV_TEST}
