@@ -4392,10 +4392,12 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 }
 
-.announcement-bar__message p {
-  @include media-query($narrowscreen) {
-    margin: 0;
-  }
+.announcement-bar__message {
+  margin-bottom: 0;
+
+  // @include media-query($narrowscreen) {
+  //   margin-bottom: 0;
+  // }
 }
 
 .announcement-bar__nav {
