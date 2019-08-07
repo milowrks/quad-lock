@@ -22,6 +22,7 @@
           background-color: {{ section.settings.color_bg }};
         }
 
+
         .announcement-bar--link:hover {
           {% assign brightness = section.settings.color_bg | color_brightness %}
 
@@ -49,7 +50,11 @@
           
         <ul class="announcement-bar__nav announcement-bar__message">
           <li>Support</li>
-          <li>Australia</li>
+          <li>
+            <img class="flag-aus" src="{{ 'australia_28x.png' |  asset_img_url: '20x12' }}" alt="">
+            Australia
+            <span class="caret-down">▾</span>
+          </li>
           <li>Login</li>
         </ul>
 

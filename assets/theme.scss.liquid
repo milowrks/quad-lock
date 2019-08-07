@@ -4379,9 +4379,9 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   text-transform: uppercase;
   padding: 10px $gutter-site-mobile;
 
-  @include media-query($medium-up) {
-    padding: 10px $gutter-site;
-  }
+  // @include media-query($medium-up) {
+  //   padding: 10px $gutter-site;
+  // }
 
   @include media-query($narrowscreen) {
     text-align: center;
@@ -4416,6 +4416,11 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .announcement-bar__nav li:last-child {
   margin-right: 0;
+}
+
+.flag-aus {
+  vertical-align: middle;
+  margin-right: .5rem;
 }
 
 .site-header__logo {
