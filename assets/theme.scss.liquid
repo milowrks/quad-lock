@@ -4379,9 +4379,9 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   text-transform: uppercase;
   padding: 10px $gutter-site-mobile;
 
-  // @include media-query($medium-up) {
-  //   padding: 10px $gutter-site;
-  // }
+  @include media-query($medium-up) {
+    padding: 10px $gutter-site;
+  }
 
   @include media-query($narrowscreen) {
     text-align: center;
@@ -4409,7 +4409,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 }
 
-.announcement-bar__nav li {
+.announcement-bar__nav>li {
   display: inline-block;
   margin-right: 2rem;
   cursor: pointer;
@@ -4428,7 +4428,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   display: none;
   position: absolute;
   background-color: #000;
-  min-width: 160px;
   z-index: 1;
 }
 
@@ -4445,6 +4444,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .dropdown__content li:hover {
   background-color: #ddd;
   color: #000;
+  transition: .2s ease-in all;
 }
 
 .dropdown:hover .dropdown__content {
