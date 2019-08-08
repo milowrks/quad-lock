@@ -8,6 +8,15 @@
 
 /*================ Accordion ================*/
 
+.warranty-policies {
+  display: flex;
+}
+
+.warranty-policies main {
+  flex: 1 0 80%;
+  margin-right: 2rem;
+}
+
 .accordion__item {
   display: flex;
   flex-flow: column nowrap;
@@ -15,7 +24,7 @@
   padding: 24px 0;
 }
 
-.accordion__item__header {
+.accordion__header {
   position: relative;
 }
 
@@ -31,11 +40,11 @@
   display: none;
 }
 
-.active .fa-caret-up {
+.accordion__item.active .fa-caret-up {
   display: none;
 }
 
-.accordion {
+.accordion__header h3 {
   cursor: pointer;
   width: 100%;
   margin-bottom: 0;
@@ -45,35 +54,19 @@
   text-align: left;
 }
 
-// .active .accordion {
-//   margin-bottom: 18px;
-// }
-
-.panel {
+.accordion__content {
+  padding-top: 0;
   max-height: 0;
   overflow: hidden;
   font-size: 14px;
-  transition: all 1s ease-out;
+  transition: all 0.2s ease-out;
 }
 
-.active .panel {
+.accordion__item.active .accordion__content {
+  padding-top: 14px;
   max-height: 500px;
 }
 
-.warranty-policies {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.warranty-policies__content {
-  display: flex;
-}
-
-.accordion-container {
-  flex: 1 0 80%;
-  margin-right: 2rem;
-}
-
-.quad-lock-stamp {
+.warranty-policies aside {
   flex: 1 0 20%;
 }
