@@ -38,8 +38,7 @@
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{ 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' | stylesheet_tag }}
 
   <script>
     var theme = {
@@ -97,6 +96,7 @@
   <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script>
+  {% comment %} {{ 'accordion.js' | asset_url | script_tag }} {% endcomment %}
 
   {{ content_for_header }}
 </head>
