@@ -1,5 +1,5 @@
 <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-  <h2 class="warranty-policies-heading">Our Policies</h2>
+  <h2 class="warranty-policies-heading">{{ section.settings.title }}</h2>
   <div class="warranty-policies">
     <main>
       <div class="accordion__item">
@@ -84,3 +84,19 @@
     </aside>
   </div>
 </div>
+
+{% schema %}
+  {
+    "name": "Accordion",
+    "class": "accordion",
+    "tag": "section",
+    "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "Accordion Title"
+    }
+  ]
+  }
+{% endschema %}
