@@ -16,7 +16,11 @@
       {% endfor %}
     </main>
     <aside>
-      <img src="{{ section.settings.image | img_url: '176x172' }}" alt="Accordion Image" />
+      {% if section.settings.image == blank %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% else %}
+        <img src="{{ section.settings.image | img_url: '176x172' }}" alt="Accordion Image" />
+      {% endif %}
     </aside>
   </div>
 </div>
