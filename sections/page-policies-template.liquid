@@ -1,7 +1,7 @@
 <div class="section-header with-banner text-center">
   {% if section.settings.banner_image_enable == true %}
     {% if section.settings.banner_image == blank %}
-      {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg__banner' }}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
     {% else %}
       <img class="page-banner" src="{{ section.settings.banner_image | img_url: '1440x289' }}" alt="Banner Image" />
     {% endif %}
@@ -38,13 +38,15 @@
               </div>
             {% endfor %}
           </main>
-          <aside>
-            {% if section.settings.image == blank %}
-              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-            {% else %}
-              <img src="{{ section.settings.image | img_url: '176x172' }}" alt="Accordion Image" />
-            {% endif %}
-          </aside>
+          {% if section.settings.accordion_image_enable == true %}
+            <aside>
+              {% if section.settings.image == blank %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--accordion' }}
+              {% else %}
+                <img src="{{ section.settings.image | img_url: '176x172' }}" alt="Accordion Image" />
+              {% endif %}
+            </aside>
+          {% endif %}
         </div>
       </div>
     {% endif %}
@@ -79,6 +81,12 @@
       "type": "text",
       "label": "Title",
       "default": "Accordion Title"
+    },
+    {
+      "id": "accordion_image_enable",
+      "type": "checkbox",
+      "label": "Show Accordion Image",
+      "default": true
     },
     {
       "id": "image",
