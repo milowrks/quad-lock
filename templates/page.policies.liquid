@@ -1,14 +1,5 @@
-<div class="section-header text-center">
-  <img class="page-banner" src="{{'Warranty_Returns-Desk_1801-007.png' | asset_img_url: '1440x289' }}" />
-  <h1>{{ page.title }}</h1>
-</div>
-<div class="page-width">
-  <div class="grid">
-    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-      <div class="rte">
-        {{ page.content }}
-      </div>
-    </div>
-    {% section 'accordion' %}
-  </div>
-</div>
+{% comment %}
+  The contents of the page.policies.liquid template can be found in /sections/page-policies-template.liquid
+{% endcomment %}
+
+{% section 'page-policies-template' %}
