@@ -1,10 +1,21 @@
-<div class="section-header text-center">
-  <img class="page-banner" src="{{'Warranty_Returns-Desk_1801-007.png' | asset_img_url: '1440x289' }}" />
-  <h1>{{ page.title }}</h1>
+<div class="section-header with-banner text-center">
+  {% if section.settings.banner_image_enable == true %}
+    {% if section.settings.banner_image == blank %}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg__banner' }}
+    {% else %}
+      <img class="page-banner" src="{{ section.settings.banner_image | img_url: '1440x289' }}" alt="Banner Image" />
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+  {% endif %}
 </div>
 <div class="page-width">
   <div class="grid">
     <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      {% if section.settings.banner_image_enable == false %}
+        <div class="section-header text-center">
+          <h1>{{ page.title }}</h1>
+        </div>
+      {% endif %}
       <div class="rte">
         {{ page.content }}
       </div>
@@ -47,6 +58,17 @@
   "tag": "section",
   "settings": [
     {
+      "id": "banner_image_enable",
+      "type": "checkbox",
+      "label": "Show Banner Image",
+      "default": true
+    },
+    {
+      "id": "banner_image",
+      "type": "image_picker",
+      "label": "Select Banner Image"
+    },
+    {
       "id": "accordion_enable",
       "type": "checkbox",
       "label": "Enable Accordion",
@@ -61,7 +83,7 @@
     {
       "id": "image",
       "type": "image_picker",
-      "label": "Select Image"
+      "label": "Select Accordion Image"
     }
   ],
   "blocks": [
